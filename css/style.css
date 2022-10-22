@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+body {
+  background-image: url('../assets/bg2.jpg');
+  background-color: black;
+  font-family:'BIZ UDGothic','Signika Negative', sans-serif;
+  overflow-x: hidden;
+  background-repeat: no-repeat;
+  background-position: 100;
+  background-size: cover;
+  
+  
+  
+  
+}
+
+
+
+/* general */
+.flex {
+  display: flex;
+  gap: 1rem;
+  
+}
+
+img {
+  height: 55px;
+  max-width: 100%;
+  margin-top: 10px;
+  margin-left: 10px;
+ 
+  
+
+}
+
+.sr-only {
+ display: none;
+}
+
+
+
+/* Typography */
+.nav-item {
+  font-size: 1.3em;
+  color: white;
+}
+
+.nav-item:focus {
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+/* primary-header */
+
+.logo {
+
+  align-items: center;
+  
+
+}
+
+.primary-header {
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.primary-navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  background: hsl(0 0% 100% / 0.75);
+  backdrop-filter: blur(1rem);
+}
+
+@supports (backdrop-filter: blur(1rem)){
+  .primary-navigation {
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(1rem);
+    
+  }
+}
+
+.primary-navigation a {
+  text-decoration: none;
+}
+@media (min-width: 35em) and (max-width: 55em) {
+  .primary-navigation a > span {
+    
+
+  }
+}
+
+@media (min-width: 35em) {
+  .primary-navigation {
+    padding: 2rem;
+  }
+}
+@media (max-width: 35em) {
+  .primary-navigation {
+    gap: 2em;
+    
+    flex-direction: column;
+    padding: min(30vh,10rem) 2rem;
+
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 30%;
+
+    transform: translateX(100%);
+    transition: transform 350ms ease-in;
+ 
+  }
+
+  .primary-navigation[data-visible="true"]{
+    transform: translateX(0%)
+  }
+
+  /* hamburger menu for smaller screens */
+
+  #menu-btn {
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+    
+    
+  }
+
+  #menu-btn.fa-times {
+    transform: rotate(180deg);
+  }
+
+  #menu-btn:focus {
+    outline-style: solid;
+    outline-color: transparent;
+  }
+
+
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    background: url('../assets/icon-hamburger.svg');
+    background-repeat: no-repeat;
+    width: 2rem;
+    aspect-ratio: 1;
+    
+    right: 1rem;
+    z-index: 9999;
+    border: 0;
+    background: none;
+    
+    
+  }
+
+  
+
+
+}
